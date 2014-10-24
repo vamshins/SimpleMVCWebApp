@@ -1,0 +1,6 @@
+com\mycompany\simplewebapp\servlets\DisplayUserDetailsServlet.class
+com\mycompany\simplewebapp\servlets\UserServlet.class
+com\mycompany\simplewebapp\database\DataBaseLogic.class
+com\mycompany\simplewebapp\servlets\ValidateServlet.class
+com\mycompany\simplewebapp\servlets\RegisterServlet.class
+com\mycompany\simplewebapp\pojo\User.class

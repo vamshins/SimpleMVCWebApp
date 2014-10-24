@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SimpleWebApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>This is for validation of user while logging in.</description>
+    <display-name>ValidateServlet</display-name>
+    <servlet-name>Authentication</servlet-name>
+    <servlet-class>com.mycompany.simplewebapp.servlets.ValidateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Authentication</servlet-name>
+    <url-pattern>/validate</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Used to display the details of the user who has logged in</description>
+    <display-name>DisplayUserDetailsServlet</display-name>
+    <servlet-name>DisplayUserDetailsServlet</servlet-name>
+    <servlet-class>com.mycompany.simplewebapp.servlets.DisplayUserDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayUserDetailsServlet</servlet-name>
+    <url-pattern>/displayUserDetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>userRegistration</servlet-name>
+    <servlet-class>com.mycompany.simplewebapp.servlets.RegisterServlet</servlet-class>
+    <init-param>
+      <param-name>insertQuery</param-name>
+      <param-value>INSERT INTO USER_NAME VALUES(?,?,?,?,?,?,?,?,?,?)</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userRegistration</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.mycompany.simplewebapp.servlets.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <description>this parameter is used to mention the driver class for the database that u are using</description>
+    <param-name>driverName</param-name>
+    <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbUrl</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:XE</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbUsername</param-name>
+    <param-value>scott</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>tiger</param-value>
+  </context-param>
+  <!-- <session-config>
+  	<session-timeout>1</session-timeout>
+  </session-config> -->
+</web-app>
