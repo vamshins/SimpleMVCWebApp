@@ -1,4 +1,4 @@
-package com.mycompany.simplewebapp.servlets;
+package com.vamshi.simplewebapp.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.mycompany.simplewebapp.database.DataBaseLogic;
-import com.mycompany.simplewebapp.pojo.User;
+import com.vamshi.simplewebapp.database.DataBaseLogic;
+import com.vamshi.simplewebapp.pojo.User;
 
 /**
  * Servlet implementation class ValidateServlet

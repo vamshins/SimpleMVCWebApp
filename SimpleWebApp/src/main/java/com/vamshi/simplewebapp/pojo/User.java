@@ -1,4 +1,4 @@
-package com.mycompany.simplewebapp.pojo;
+package com.vamshi.simplewebapp.pojo;
 
 public class User {
 	

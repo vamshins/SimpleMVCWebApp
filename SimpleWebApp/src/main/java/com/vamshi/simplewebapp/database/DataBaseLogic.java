@@ -1,4 +1,4 @@
-package com.mycompany.simplewebapp.database;
+package com.vamshi.simplewebapp.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

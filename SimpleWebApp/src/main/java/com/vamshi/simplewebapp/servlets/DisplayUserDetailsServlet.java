@@ -1,4 +1,4 @@
-package com.mycompany.simplewebapp.servlets;
+package com.vamshi.simplewebapp.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
