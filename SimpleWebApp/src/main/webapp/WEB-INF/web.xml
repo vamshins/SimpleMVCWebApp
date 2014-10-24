@@ -8,7 +8,7 @@
     <description>This is for validation of user while logging in.</description>
     <display-name>ValidateServlet</display-name>
     <servlet-name>Authentication</servlet-name>
-    <servlet-class>com.mycompany.simplewebapp.servlets.ValidateServlet</servlet-class>
+    <servlet-class>com.vamshi.simplewebapp.servlets.ValidateServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Authentication</servlet-name>
@@ -18,7 +18,7 @@
     <description>Used to display the details of the user who has logged in</description>
     <display-name>DisplayUserDetailsServlet</display-name>
     <servlet-name>DisplayUserDetailsServlet</servlet-name>
-    <servlet-class>com.mycompany.simplewebapp.servlets.DisplayUserDetailsServlet</servlet-class>
+    <servlet-class>com.vamshi.simplewebapp.servlets.DisplayUserDetailsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DisplayUserDetailsServlet</servlet-name>
@@ -28,7 +28,7 @@
     <description></description>
     <display-name>RegisterServlet</display-name>
     <servlet-name>userRegistration</servlet-name>
-    <servlet-class>com.mycompany.simplewebapp.servlets.RegisterServlet</servlet-class>
+    <servlet-class>com.vamshi.simplewebapp.servlets.RegisterServlet</servlet-class>
     <init-param>
       <param-name>insertQuery</param-name>
       <param-value>INSERT INTO USER_NAME VALUES(?,?,?,?,?,?,?,?,?,?)</param-value>
@@ -42,7 +42,7 @@
     <description></description>
     <display-name>UserServlet</display-name>
     <servlet-name>UserServlet</servlet-name>
-    <servlet-class>com.mycompany.simplewebapp.servlets.UserServlet</servlet-class>
+    <servlet-class>com.vamshi.simplewebapp.servlets.UserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>

@@ -4,21 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Login page</title>
 </head>
 <body>
-<form action="validate" method="post">
+	<form action="validate" method="post">
 		<table>
 			<tr>
 				<td>Username:</td>
-				<td><input type="text" name="username"/></td>
+				<td><input type="text" name="username" /></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type="password" name="password"/></td>
+				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Submit"/></td>
+				<td colspan="2"><input type="submit" value="Submit" /></td>
 			</tr>
 		</table>
 	</form>
