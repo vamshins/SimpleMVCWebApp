@@ -14,15 +14,17 @@
 <body>
 	<%
 		User user = (User) session.getAttribute("user");
-		if(user == null){
+		if (user == null) {
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
-		}else {
-			%>
-			Welcome <%=user.getUsername()%>...Check ur details <a href="details.jsp">here</a>				
+		} else {
+	%>
+	Welcome
+	<%=user.getUsername()%>...Check ur details
+	<a href="details.jsp">here</a>
 	<%
 		}
-	%>	
-	
+	%>
+
 </body>
 </html>

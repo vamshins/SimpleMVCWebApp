@@ -20,17 +20,18 @@ import com.vamshi.simplewebapp.pojo.User;
  */
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private String insertQuery;
-	
-    public RegisterServlet() {
-        super();        
-    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private String insertQuery;
+
+	public RegisterServlet() {
+		super();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+			IOException {
 		insertQuery = getServletConfig().getInitParameter("insertQuery");
-		System.out.println("insertQuery string from init parameter in web.xml is "+insertQuery);
-		
+		System.out.println("insertQuery string from init parameter in web.xml is " + insertQuery);
+
 		boolean flag = false;
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -44,18 +45,19 @@ public class RegisterServlet extends HttpServlet {
 		String favCoffee = "";
 		String paramValues[] = request.getParameterValues("favCoffee");
 		System.out.println(paramValues);
-		for(String paramValue : paramValues){
-			favCoffee+=paramValue;
+		for (String paramValue : paramValues) {
+			favCoffee += paramValue;
 		}
-		
+
 		DataBaseLogic dataBaseLogic = new DataBaseLogic();
 		ServletContext context = getServletConfig().getServletContext();
 		Connection connection = dataBaseLogic.getDatabaseConnection(context.getInitParameter("driverName"),
-									context.getInitParameter("dbUrl"), context.getInitParameter("dbUsername"), context.getInitParameter("dbPassword"));
+				context.getInitParameter("dbUrl"), context.getInitParameter("dbUsername"),
+				context.getInitParameter("dbPassword"));
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(insertQuery);
 			pStatement.setString(1, username);
-			pStatement.setString(2, password);		
+			pStatement.setString(2, password);
 			pStatement.setInt(3, Integer.parseInt(age));
 			pStatement.setString(4, gender);
 			pStatement.setString(5, address);
@@ -67,7 +69,7 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("before execute");
 			pStatement.executeQuery();
 			System.out.println("after execute");
-			flag=true;
+			flag = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -75,46 +77,14 @@ public class RegisterServlet extends HttpServlet {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}			
+			}
 		}
-		if(flag){
+		if (flag) {
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
-		}
-		else{
-			RequestDispatcher rd = request.getRequestDispatcher("failure.jsp");
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("regfail.jsp");
 			rd.forward(request, response);
 		}
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
